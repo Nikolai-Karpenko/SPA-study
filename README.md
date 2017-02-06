@@ -1,4 +1,4 @@
 # SPA-study
-A single page application with a some AJAX functionality
+A single page application with some extra AJAX functionality (sending JSON files to/from a remote server)
 
-Has to be run on a server. I use Open Server
+Has to be run on a server.
