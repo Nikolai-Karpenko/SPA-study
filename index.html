@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="realf">
+    <meta name="author" content="Nick Karpenka">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Eksakt vitenskap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/particles.css">
+    <link rel="stylesheet" type="text/css" href="/css/menuSlide.css">
+    <link rel="stylesheet" type="text/css" href="/css/bookCarousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/chapterMain.css">
+    <link rel="stylesheet" type="text/css" href="/css/masonry.css">
+    <link rel="stylesheet" type="text/css" href="/css/offcanvasArticle.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" onclick="SwitchToMainPage()" style="color:#5cb85c; font-size: 1.5em">&alpha;</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul id="navbarCollapsedUl" class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MatR1</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#" onclick="SwitchToArticlePage('MatR1', 'geometri'); return false">Geometri</a></li>
+                          <li><a href="#">Algebra</a></li>
+                          <li><a href="#">Funksjoner</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Kombinatorikk og<br>sannsynlighet</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MatR2</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Geometri</a></li>
+                          <li><a href="#">Algebra</a></li>
+                          <li><a href="#">Funksjoner</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Differensiallikninger</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fysikk</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Bevegelse</a></li>
+                          <li><a href="#">Newtons lover</a></li>
+                          <li><a href="#">Energi</a></li>
+                          <li><a href="#">Bølger</a></li>
+                          <li><a href="#">Atomfysikk</a></li>
+                          <li><a href="#">Atomkjerne</a></li>
+                          <li><a href="#">Elektrisitet</a></li>
+                      </ul>
+                  </li>
+              </ul>
+
+              <button id="profileBtn" class="btn btn-success navbar-right" type="button" data-toggle="modal" data-target="#profileModal" onclick="refreshProfile()"><i class="glyphicon glyphicon-user"></i> Profil</button>
+
+              <form id="navbarRightForm" action="" class="navbar-form navbar-right hidden-sm">
+                  <div class="form-group">
+                      <input id="loginInputFull" type="text" placeholder="Brukernavn" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <input id="passInputFull" type="password" placeholder="Passord" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-success" onclick="checkAdminCreds('loginInputFull', 'passInputFull'); return false;">Logg inn</button>
+              </form>
+              <div class="btn btn-group visible-sm-block navbar-right">
+                  <button id="navbarButtonGroup" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Innlogging <span class="caret"></span>
+                  </button>
+                  <div class="dropdown-menu" style="padding-right: 15px; margin: 3px -2px 0 0">
+                      <form action="" class="navbar-form navbar-right">
+                          <div class="form-group">
+                              <input id="loginInputMinimized" type="text" class="form-control" placeholder="Brukernavn">
+                          </div>
+                          <br><br>
+                          <div class="form-group">
+                              <input id="passInputMinimized" type="password" class="form-control" placeholder="Passord">
+                          </div>
+                          <br><br>
+                          <button type="submit" class="btn btn-success" onclick="checkAdminCreds('loginInputMinimized', 'passInputMinimized'); return false;">Logg inn</button>
+                      </form>
+                  </div>
+              </div>﻿
+          </div><!--/.navbar-collapse -->
+      </div>
+  </nav>
+
+    <div id="main_container">
+    </div>
+    <script type="text/javascript" src="/scripts/SPA.js"></script>
+    <div id="FooterDiv" class="container">
+        <hr>
+        <p>&copy; 2017 Nick Karpenka.</p>
+        <div class="modal fade" id="profileModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onclick="clearKeyPresses()">&times;</button>
+                        <h4 class="modal-title text-center"><span id="bigTitle">Min profil</span>  <span id="status" class="text-center"></span></h4>
+                        <h5 class="pull-left" id="questionNumber"></h5>
+                    </div>
+                    <div class="modal-body" id="profileModalBody">
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="col-xs-3 ">
+                            <button style="display: none" type="button" id="btnAdminCheckServer" class="btn btn-default pull-left" onclick="adminCheckServer()">Check / Insert</button>
+                            <button style="display: none" type="button" id="btnLeft" class="btn btn-default pull-left" onclick="prevQuestion()"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                        </div>
+
+
+
+                        <div class="col-xs-6 text-center"><button style="display: none" type="button" id="btnMiddle" class="btn btn-success btn-circle" title="Lagre/sende" onclick="saveProgress()">&alpha;</button></div>
+                        <div class="col-xs-3 pull-right"><button style="display: none" type="button" id="btnRight" class="btn btn-default" onclick="nextQuestion()"><span class="glyphicon glyphicon-chevron-right"></span></button></div>
+
+                        <button type="button" id="btnClose" class="btn btn-default" data-dismiss="modal">Lukk</button>
+                        <button type="button" id="btnRefresh" class="btn btn-primary" onclick="getTestsList()"><span class="glyphicon glyphicon-refresh"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="/scripts/registration.js"></script>
+    <script src="/scripts/profileCtrl.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+html,
+body {
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+body {
+  padding-top: 50px;
+  background-color: black;
+}
+
+ol, ul {
+  list-style-type: lower-greek;
+}
+p > a {
+  color: #5cb85c;
+}
+li > a {
+  color: #006600;
+}
+
+.testParagraph {
+    padding: .7em !important;
+}
+.testLink {
+    cursor: pointer !important;
+    color: #000 !important;
+}
+
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  margin-top: 1em;
+  border-radius: 15px;
+  font-size: 1.2em;
+  line-height: 9px;
+}
+
+#profileModal .btn-circle {
+    margin-top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.jumbotron {
+  background-color: rgba(47, 102, 77, .5);
+  color: ivory;
+}
+
+.jumbotron p a {
+  position: relative;
+}
+
+.progress {
+    cursor: pointer !important;
+    position: relative;
+    height: 25px;
+}
+.progress > .progress-type {
+    position: absolute;
+    left: 0px;
+    font-weight: 800;
+    padding: 3px 30px 2px 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(25, 25, 25, 0.2);
+}
+.progress > .progress-completed {
+    position: absolute;
+    right: 0px;
+    font-weight: 800;
+    padding: 3px 10px 2px;
+}
+
+#registration {
+  color: #000;
+}
+
+#questionNumber {
+    font-style: italic;
+}
+#profileBtn {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+#loginbox > div:first-child {
+    padding-bottom: 10px;
+}
+#form > div {
+    margin-bottom: 25px;
+}
+
+#form > div:last-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#FooterDiv hr {
+  border-color: #333;
+}

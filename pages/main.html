@@ -1,0 +1,121 @@
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<!-- scripts -->
+<script src="/scripts/particles.js"></script>
+<script src="/scripts/app.js"></script>
+
+<!-- Main jumbotron -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 id="welcome">Velkommen!</h1>
+        <p>Her kan du studere matematikk og fysikk.<br>Alt fagstoff er fra <a href="http://ndla.no/nb" target="_blank"><em>Nasjonal digital læringsarena (NDLA)</em></a> &mdash; et interfylkeskommunalt samarbeid som tilbyr fritt tilgjengelige åpne digitale læringsressurser for videregående opplæring.</p>
+        <p id="regInvite">Vennligst registrer deg her <i>(eller tast inn "admin" som både brukernavn og passord)</i>:</p>
+        <p id="regButton">
+            <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registration" role="button">Registrer ny bruker &raquo;</a>
+        </p>
+        <!-- Modal -->
+        <div class="modal fade" id="registration" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center">Registrer ny bruker</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="user" required type="text" class="form-control" name="user" value="" placeholder="Brukernavn">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Passord">
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-sm-12 controls">
+                                    <button type="submit" class="btn btn-success btn-circle center-block" onclick="saveCreds(); return false" title="OK">&alpha;</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        toggleBodyColor(0);
+        if (document.cookie) {
+            $('#regInvite').hide();
+            $('#regButton').hide();
+            $('#welcome').text("Velkommen, " + document.cookie.substring(9, 30).replace(/(%20)/g, ' ') + "!");
+    }
+    });
+    $('#registration').on('shown.bs.modal', function () {
+        $('#user').focus()
+    });
+</script>
+
+<div class="container">
+    <!-- Row of columns -->
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center">Matematikk R1</div>
+                </div>
+                <div class="panel-body">
+                    <ol>
+                        <li><a href="#" onclick="SwitchToArticlePage('MatR1', 'geometri'); return false">Geometri</a></li>
+                        <li>Algebra</li>
+                        <li>Funksjoner</li>
+                        <li>Kombinatorikk og sannsynlighet</li>
+                    </ol>
+                    <button type="button" class="btn btn-success center-block" onclick="SwitchToContentsPage('MatR1')" role="button">Vis mer &raquo;</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center">Matematikk R2</div>
+                </div>
+                <div class="panel-body">
+                    <ol>
+                        <li>Geometri</li>
+                        <li>Algebra</li>
+                        <li>Funksjoner</li>
+                        <li>Differensiallikninger</li>
+                    </ol>
+                    <button type="button" class="btn btn-success center-block" role="button">Vis mer &raquo;</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+            <div class="panel panel-default" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center">Fysikk</div>
+                </div>
+                <div class="panel-body">
+                    <ol>
+                        <li>Bevegelse</li>
+                        <li>Newtons lover</li>
+                        <li>Energi</li>
+                        <li>Bølger</li>
+                        <li>Atomfysikk</li>
+                        <li>Atomkjerne</li>
+                        <li>Elektrisitet</li>
+                    </ol>
+                    <button type="button" class="btn btn-success center-block" role="button">Vis mer &raquo;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->

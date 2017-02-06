@@ -1,0 +1,14 @@
+.breadcrumb a {
+	color: #006600;
+}
+
+#titlePic {
+  width: 382px;
+  height: 360px;
+  border-radius: 30px;
+}
+@media screen and (max-width: 460px) {
+  #titlePic {
+    display: none;
+  }
+}

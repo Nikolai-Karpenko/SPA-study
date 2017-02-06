@@ -1,0 +1,21 @@
+.infoBox {
+	border-radius: 15px;
+	background-color: rgba(47, 102, 77, .85);
+}
+
+#description  {
+	color: ivory;
+}
+
+#crumb {
+	height: 30px;
+}
+
+#description a {
+	color: #006600;
+}
+
+#description .breadcrumb {
+	background-color: black;
+	font-size: 1.15em;
+}
